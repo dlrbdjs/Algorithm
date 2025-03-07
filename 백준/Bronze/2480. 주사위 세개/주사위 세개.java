@@ -5,22 +5,23 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
+        
+        int A = sc.nextInt();
+        int B = sc.nextInt();
+        int C = sc.nextInt();
 
-        List<Integer> diceList = new ArrayList<>();
-        for (int i = 0; i < 3; i++) {
-            diceList.add(sc.nextInt());
-        }
-        long differentNumberCount = diceList.stream().distinct().count();
-
-        if (differentNumberCount == 1) {
-            System.out.println(10000 + 1000 * diceList.get(0));
-        } else if (differentNumberCount == 2) {
-            System.out.println(1000 + 100 * diceList.stream()
-                    .filter(num -> Collections.frequency(diceList, num) == 2)
-                    .findFirst()
-                    .orElse(0));
-        } else if (differentNumberCount == 3) {
-            System.out.println(100 * diceList.stream().max(Integer::compareTo).get());
+        if (A == B && C == B) {
+            System.out.println(10000 + 1000 * A);
+        } else if (A == B) {
+            System.out.println(1000 + 100 * A);
+        } else if (C == B) {
+            System.out.println(1000 + 100 * B);
+        } else if (C == A) {
+            System.out.println(1000 + 100 * A);
+        } else {
+            int temp = Math.max(A, B);
+            temp = Math.max(temp, C);
+            System.out.println(100 * temp);
         }
     }
 }
