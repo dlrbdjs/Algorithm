@@ -30,16 +30,12 @@ public class Main {
 
     // 계산
     public static void getResult(List<List<Character>> outerList) {
-        List<Character> resultList = new ArrayList<>();
         for (int i = 0; i < maxLength; i++) {
             for (int j = 0; j < 5; j++) {
                 if (outerList.get(j).size() > i) {
-                    resultList.add(outerList.get(j).get(i));
+                    System.out.print(outerList.get(j).get(i));
                 }
             }
-        }
-        for (Character c : resultList) {
-            System.out.print(c);
         }
     }
 
