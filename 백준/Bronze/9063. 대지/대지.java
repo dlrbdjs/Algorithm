@@ -26,9 +26,7 @@ public class Main {
     public static int getMinValue(List<Integer> list) {
         int min = list.get(0);
         for (int i = 1; i < list.size(); i++) {
-            if (min > list.get(i)) {
-                min = list.get(i);
-            }
+            min = Math.min(min, list.get(i));
         }
         return min;
     }
@@ -37,9 +35,7 @@ public class Main {
     public static int getMaxValue(List<Integer> list) {
         int max = list.get(0);
         for (int i = 1; i < list.size(); i++) {
-            if (max < list.get(i)) {
-                max = list.get(i);
-            }
+            max = Math.max(max, list.get(i));
         }
         return max;
     }
